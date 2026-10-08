@@ -1,0 +1,8 @@
+land,iso,biokapazitaet_gha,gov,fussabdruck_gha,entnahme_t,verbrauch_t,hinweis
+Brasilien,BRA,8.10,0.23,2.44,23.76,19.20,
+USA,USA,3.68,0.35,7.05,23.72,29.55,
+Ungarn,HUN,2.51,0.18,3.67,14.29,15.25,GOV aus Auswertung 2017; nicht streng vergleichbar (Anhang D.1)
+Deutschland,DEU,1.60,0.31,3.78,12.16,19.50,
+Tansania,TZA,0.76,0.19,0.97,3.72,1.54,
+Somalia,SOM,0.60,0.07,0.80,3.17,3.37,
+Afghanistan,AFG,0.50,,0.77,1.00,1.39,GOV leer: Weltbank meldet seit 2018 keine Bildungsausgaben - bewusst keine Schaetzung (Anhang D.1)

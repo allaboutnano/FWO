@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+.env.*
+*.key
+*.seed
+# Niemals personenbezogene Daten, Seeds oder Schlüssel einchecken

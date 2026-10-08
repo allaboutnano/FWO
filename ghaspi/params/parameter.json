@@ -1,0 +1,5 @@
+{
+  "_hinweis": "GOV und SPI-Saetze sind Entscheidungen der Basisdemokratie, keine Naturgroessen (Buch Kap. 8.2 und 8.9). Hier stehen nur Platzhalter, bis ein Beschluss vorliegt.",
+  "gov": { "status": "offen", "beschluss": null },
+  "spiSaetze": { "status": "offen", "beschluss": null }
+}
