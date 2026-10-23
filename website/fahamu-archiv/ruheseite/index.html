@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- Ruheseite für fahamu.freieweltordnung.de. Vorlage: fahamu-archiv/ (Baukasten, nicht weiterentwickeln). Kein Spendenaufruf. -->
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Fahamu – diese Seite ruht</title>
+  <meta name="description" content="Fahamu ist zurzeit nicht aktiv. Es werden keine Spenden gesammelt.">
+  <style>
+    :root { --text: #1c2730; --leise: #4d5d69; --grund: #fbfcfd; --flaeche: #eef4f7; --linie: #d3dfe6; --wasser: #0b5577; }
+    @media (prefers-color-scheme: dark) {
+      :root { --text: #e3eaef; --leise: #a9b8c3; --grund: #10171c; --flaeche: #18232a; --linie: #2c3c47; --wasser: #7cc4e6; }
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; min-height: 100vh; display: flex; flex-direction: column;
+      background: var(--grund); color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 1.0625rem; line-height: 1.6;
+    }
+    main { flex: 1; width: 100%; max-width: 36rem; margin: 0 auto; padding: 3rem 1rem; }
+    h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 1rem; }
+    .marke { font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--wasser); margin: 0 0 0.5rem; }
+    .kasten { background: var(--flaeche); border: 1px solid var(--linie); border-radius: 6px; padding: 1rem 1.1rem; margin: 1.5rem 0; }
+    .kasten p { margin: 0; }
+    a { color: var(--wasser); text-underline-offset: 0.15em; }
+    :focus-visible { outline: 3px solid var(--wasser); outline-offset: 2px; }
+    footer { border-top: 1px solid var(--linie); background: var(--flaeche); color: var(--leise); font-size: 0.95rem; }
+    footer ul { list-style: none; max-width: 36rem; margin: 0 auto; padding: 1.25rem 1rem 2rem; display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; }
+    @media (min-width: 48rem) { main { padding-top: 6rem; } h1 { font-size: 2.3rem; } }
+  </style>
+</head>
+<body>
+<main>
+  <p class="marke">Fahamu</p>
+  <h1>Diese Seite ruht.</h1>
+  <p>Fahamu ist zurzeit nicht aktiv. Fahamu ist keine angemeldete Organisation.</p>
+  <div class="kasten">
+    <p>Es werden <strong>keine Spenden</strong> gesammelt und keine Freiwilligen gesucht.</p>
+  </div>
+  <p>Was Johannes Heyder derzeit macht, steht auf <a href="https://freieweltordnung.de/">freieweltordnung.de</a>.</p>
+</main>
+<footer>
+  <ul>
+    <li><a href="https://freieweltordnung.de/impressum/">Impressum</a></li>
+    <li><a href="https://freieweltordnung.de/datenschutz/">Datenschutz</a></li>
+  </ul>
+</footer>
+</body>
+</html>
