@@ -1,0 +1,177 @@
+/* FWO – gemeinsames Stylesheet. Nur Systemschriften, keine externen Quellen. */
+:root {
+  --text: #1c2730;
+  --text-leise: #4d5d69;
+  --grund: #fbfcfd;
+  --flaeche: #eef4f7;
+  --linie: #d3dfe6;
+  --wasser: #0b5577;
+  --wasser-hell: #1f7ea8;
+  --hinweis: #fff6dc;
+  --hinweis-linie: #e3c25a;
+  --breite: 44rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #e3eaef;
+    --text-leise: #a9b8c3;
+    --grund: #10171c;
+    --flaeche: #18232a;
+    --linie: #2c3c47;
+    --wasser: #7cc4e6;
+    --wasser-hell: #a5d8ef;
+    --hinweis: #2e2914;
+    --hinweis-linie: #8a7428;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--grund);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+img { max-width: 100%; height: auto; }
+a { color: var(--wasser); text-underline-offset: 0.15em; }
+a:hover { color: var(--wasser-hell); }
+:focus-visible { outline: 3px solid var(--wasser-hell); outline-offset: 2px; }
+
+.springen {
+  position: absolute; left: -999px; top: 0;
+  background: var(--wasser); color: #fff; padding: 0.5rem 1rem; z-index: 10;
+}
+.springen:focus { left: 0.5rem; top: 0.5rem; }
+
+/* Kopf */
+.kopf { border-bottom: 1px solid var(--linie); background: var(--grund); }
+.kopf-innen {
+  max-width: 72rem; margin: 0 auto; padding: 0.75rem 1rem 0;
+}
+.marke {
+  display: inline-block; font-weight: 700; font-size: 1.15rem;
+  color: var(--text); text-decoration: none; letter-spacing: 0.01em;
+}
+.marke span { color: var(--wasser); }
+.hauptmenue ul {
+  list-style: none; margin: 0; padding: 0.5rem 0 0;
+  display: flex; gap: 0.25rem 1.1rem; overflow-x: auto; white-space: nowrap;
+  scrollbar-width: thin;
+}
+.hauptmenue a {
+  display: inline-block; padding: 0.45rem 0 0.6rem; text-decoration: none;
+  color: var(--text-leise); border-bottom: 3px solid transparent;
+}
+.hauptmenue a:hover { color: var(--wasser); }
+.hauptmenue a[aria-current="page"] { color: var(--text); border-bottom-color: var(--wasser); }
+
+/* Inhalt */
+main { display: block; }
+.seite { max-width: var(--breite); margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+h1, h2, h3 { line-height: 1.25; margin: 2rem 0 0.75rem; }
+h1 { font-size: 1.9rem; margin-top: 0.5rem; }
+h2 { font-size: 1.4rem; padding-top: 0.5rem; }
+h3 { font-size: 1.15rem; }
+h2, h3 { scroll-margin-top: 4rem; }
+p, ul, ol, table, blockquote { margin: 0 0 1rem; }
+.leitsatz { font-size: 1.2rem; color: var(--text-leise); }
+blockquote {
+  margin-left: 0; padding: 0.75rem 1rem; border-left: 4px solid var(--wasser);
+  background: var(--flaeche);
+}
+blockquote p:last-child { margin-bottom: 0; }
+blockquote footer { margin-top: 0.5rem; font-size: 0.95rem; color: var(--text-leise); }
+hr { border: 0; border-top: 1px solid var(--linie); margin: 2rem 0; }
+.offen {
+  background: var(--hinweis); border: 1px solid var(--hinweis-linie);
+  padding: 0.05rem 0.3rem; border-radius: 3px; font-family: ui-monospace, monospace; font-size: 0.9em;
+}
+.kasten {
+  background: var(--flaeche); border: 1px solid var(--linie); border-radius: 6px;
+  padding: 1rem 1.1rem; margin: 0 0 1.25rem;
+}
+.kasten > :last-child { margin-bottom: 0; }
+.kasten h2, .kasten h3 { margin-top: 0; padding-top: 0; }
+.adresse { font-family: ui-monospace, monospace; word-break: break-all; }
+
+/* Pfeiler-Liste */
+.pfeiler { list-style: none; padding: 0; counter-reset: pfeiler; }
+.pfeiler > li {
+  counter-increment: pfeiler; position: relative;
+  padding: 1rem 1rem 1rem 3.4rem; margin-bottom: 0.75rem;
+  background: var(--flaeche); border: 1px solid var(--linie); border-radius: 6px;
+}
+.pfeiler > li::before {
+  content: counter(pfeiler); position: absolute; left: 1rem; top: 1rem;
+  width: 1.8rem; height: 1.8rem; border-radius: 50%;
+  background: var(--wasser); color: var(--grund); font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.pfeiler h2, .pfeiler h3 { margin: 0 0 0.35rem; padding: 0; font-size: 1.15rem; }
+.pfeiler p { margin-bottom: 0.4rem; }
+.pfeiler p:last-child { margin-bottom: 0; }
+
+/* Tabellen: schmal scrollbar statt Seite zu sprengen */
+.tabelle { overflow-x: auto; margin: 0 0 1.25rem; border: 1px solid var(--linie); border-radius: 6px; }
+.tabelle table { border-collapse: collapse; width: 100%; margin: 0; font-size: 0.95rem; }
+.tabelle th, .tabelle td { padding: 0.5rem 0.65rem; border-bottom: 1px solid var(--linie); text-align: left; vertical-align: top; }
+.tabelle thead th { background: var(--flaeche); }
+.tabelle tbody tr:last-child > * { border-bottom: 0; }
+.tabelle .mitte { text-align: center; }
+.tabelle caption { caption-side: bottom; text-align: left; padding: 0.5rem 0.65rem; font-size: 0.9rem; color: var(--text-leise); }
+.tabelle-breit table { min-width: 46rem; }
+.tabelle-breit th:first-child, .tabelle-breit td:first-child { position: sticky; left: 0; background: var(--grund); }
+.tabelle-breit thead th:first-child { background: var(--flaeche); }
+
+/* Lange Seiten: Sprungmarken laufen mit (nur CSS sticky) */
+.lang { max-width: 72rem; margin: 0 auto; padding: 0 1rem; }
+.sprungmarken {
+  position: sticky; top: 0; z-index: 5;
+  background: var(--grund); border-bottom: 1px solid var(--linie);
+  margin: 0 -1rem; padding: 0 1rem;
+}
+.sprungmarken p { display: none; }
+.sprungmarken ul {
+  list-style: none; margin: 0; padding: 0.4rem 0;
+  display: flex; gap: 0.4rem; overflow-x: auto; white-space: nowrap; scrollbar-width: thin;
+}
+.sprungmarken a {
+  display: inline-block; padding: 0.3rem 0.65rem; border: 1px solid var(--linie);
+  border-radius: 999px; text-decoration: none; font-size: 0.92rem; color: var(--text-leise);
+}
+.sprungmarken a:hover { color: var(--wasser); border-color: var(--wasser); }
+.lang .seite { padding-left: 0; padding-right: 0; }
+
+@media (min-width: 60rem) {
+  .lang { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 3rem; align-items: start; }
+  .sprungmarken {
+    top: 1rem; margin: 2rem 0 0; padding: 0; border: 0; background: none;
+    max-height: calc(100vh - 2rem); overflow-y: auto;
+  }
+  .sprungmarken p { display: block; margin: 0 0 0.4rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-leise); }
+  .sprungmarken ul { display: block; padding: 0; white-space: normal; border-left: 2px solid var(--linie); }
+  .sprungmarken a { display: block; border: 0; border-radius: 0; padding: 0.3rem 0 0.3rem 0.85rem; margin-left: -2px; border-left: 2px solid transparent; }
+  .sprungmarken a:hover { border-left-color: var(--wasser); }
+  .lang .seite { max-width: var(--breite); margin: 0; }
+  h2, h3 { scroll-margin-top: 1rem; }
+}
+
+/* Fuß */
+.fuss { border-top: 1px solid var(--linie); background: var(--flaeche); color: var(--text-leise); font-size: 0.95rem; }
+.fuss-innen { max-width: 72rem; margin: 0 auto; padding: 1.25rem 1rem 2rem; }
+.fuss ul { list-style: none; padding: 0; margin: 0 0 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; }
+.fuss p { margin: 0; }
+
+@media (min-width: 48rem) {
+  h1 { font-size: 2.3rem; }
+  .seite { padding-top: 2.25rem; }
+}
+@media print {
+  .kopf nav, .sprungmarken, .fuss ul, .springen { display: none; }
+  .lang { display: block; }
+}
